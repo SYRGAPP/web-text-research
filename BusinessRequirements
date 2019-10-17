@@ -1,0 +1,59 @@
+Business requirements for BU Project
+
+A simple web-sms chat application.
+
+An independent web-application has to be implemented that’s used by a specific type of users: the managers, who only communicate with the system using the application. The other type of users are the employees, who don’t use the web-application, they only communicate with the system using text messages. The goal is to enable managers and employees to communicate smoothly using the web-app and the text messages respectively.
+
+Functionality:
+  - Managers can add/remove employees with name + phone number to the system.
+  - Managers can select a couple of employees, and send them a text message from the web-application, to initiate a chat with them. The initial message contains a fixed greeting line from the system and a custom message from the manager.
+  - Employees receive the text messages on their phone. The text message contains the content of the manager’s message plus the manager’s name.
+  - Employees can reply to the messages in SMS.
+  - Managers see a list of employees that they initiated chat with in the app.
+  - Managers see their initial messages and the answers from employees in the app. New answers appear in less than 1 minute.
+  - Managers can reply or send new messages in the chats with specific employees.
+  - Employees receive new texts from managers in sms from the same number.
+  - If a manager initiates a chat with an employee that already has a chat open with, then the new init message just continues the discussion with the employee.
+  - Managers authenticate themselves with their names in the application. Asking for passwords is not a requirement.
+  - Managers are kept logged into the application until they sign out.
+  - Managers see all employees added by other managers.
+  - Managers can read all messages within their workplace.
+
+
+
+
+
+Critical:
+  - Decide which Chat API to use to meet these requirements - core is handling SMS, multiple manager ability to view the same chat conversation, show which manager replied. Needs to be SOC II Compliant too!
+  - A few options:
+    > Getstream
+    > Sendbird
+    > Twilio (currently using this for messaging service, not sure if they have good chat API)
+    > Etc. plenty others!
+
+
+Technical Requirements:
+  - System architecture
+  - System components:
+    > Manager-frontend, a PWA hosted as static files, intended to be used by managers, to reach out to employees, and to chat with them
+    > Backend: serves the Manager-frontend. Communicates with the DB and with Twilio
+    > DB: for storing manager, employee and chat data. Preferably PostgreSQL.
+    > Text message and chat handling: do research first. If there’s any 3rd party service that has direct support to this functionality then implement that. If there’s not use twilio for sending and receiving text messages.
+    > Manager-frontend
+  - Technology:
+    > ES6 / React (OK to start with create-react-app)
+    > Material UI
+    > GraphQL (apollo-client for react)
+    > TDD
+    > Unit testing with jest
+  - Backend Technology:
+    > ES6 or optionally Flow
+    > GraphQL (apollo server)
+    > TDD
+    > Unit testing with jest
+
+Running:
+  - It’s recommended to build a dockerized environment. The backend needs to be run in a docker container. The frontend can be either run in another docker container or can be served as static files using docker (for example using an nginx container).
+
+Repository:
+  - The project should be in a single git repo, but the backend and the frontend needs to be clearly separated. SYRG is providing the repo: https://github.com/SYRGAPP/web-text-research.git

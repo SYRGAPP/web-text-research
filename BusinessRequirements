@@ -39,8 +39,7 @@ Technical Requirements:
     > Backend: serves the Manager-frontend. Communicates with the DB and with Twilio
     > DB: for storing manager, employee and chat data. Preferably PostgreSQL.
     > Text message and chat handling: do research first. If there’s any 3rd party service that has direct support to this functionality then implement that. If there’s not use twilio for sending and receiving text messages.
-    > Manager-frontend
-  - Technology:
+  - Manager-frontend Technology:
     > ES6 / React (OK to start with create-react-app)
     > Material UI
     > GraphQL (apollo-client for react)

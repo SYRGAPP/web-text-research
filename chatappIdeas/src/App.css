@@ -1,0 +1,63 @@
+.App {
+  background-color: white;
+  display: grid;
+}
+
+.App-logo {
+  height: 40vmin;
+}
+
+.message-list {
+  height: 90vh;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  background-color: white;
+  border-color: lightgrey;
+  overflow: scroll;
+}
+
+.message {
+  display: flex;
+  margin-left: 15px;
+  margin-top: 5px;
+  background-color: #3e4dea;
+  border-radius: 3px;
+  color: white;
+}
+
+.message-username {
+  margin-left: 5px;
+  color: darkgrey;
+}
+
+.message-text {
+  margin-left: 5px;
+  display: inline;
+}
+
+.message-form {
+  min-height: 5vh;
+  display: flex;
+  background-color: #282c34;
+}
+
+.message-form input{
+  width: 100%;
+}
+
+.upper-bar {
+  min-height: 5vh;
+  background-color: #3e4dea;
+}
+
+.upper-bar img{
+  margin: 5px;
+  height: 10%;
+  width: 10%;
+}
+
+.list-of-messages {
+  list-style: none;
+}

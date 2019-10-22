@@ -6,6 +6,9 @@ import SendMessageForm from './SendMessageForm.js'
 import { makeStyles } from '@material-ui/core/styles';
 import Grid from '@material-ui/core/Grid'
 
+//Chat page
+//Based on code from this video -> https://www.youtube.com/watch?v=jFNHerJqvFw
+
 var MESSAGE_DATA = [
     {
         senderId: 'name2',

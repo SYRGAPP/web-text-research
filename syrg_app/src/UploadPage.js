@@ -7,7 +7,7 @@ import FontIcon from 'material-ui/FontIcon';
 import {blue500, red500, greenA200} from 'material-ui/styles/colors';
 import UploadScreen from './UploadScreen';
 import Pastfiles from './Pastfiles';
-import LoginScreen from './Loginscreen'
+import LoginScreen from './LoginScreen'
 
 class App extends Component {
   constructor(props) {
@@ -21,8 +21,8 @@ class App extends Component {
   }
   /**
    * Toggle opening and closing of drawer
-   * @param {*} event 
-   */ 
+   * @param {*} event
+   */
   toggleDrawer(event){
   // console.log("drawer click");
   this.setState({draweropen: !this.state.draweropen})
@@ -81,7 +81,7 @@ class App extends Component {
               <MenuItem onClick={(event) => this.handleMenuClick(event,"logout")}>
                   Logout
               </MenuItem>
-              </div> 
+              </div>
           </Drawer>
         </MuiThemeProvider>
         <div>

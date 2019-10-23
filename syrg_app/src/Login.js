@@ -5,9 +5,21 @@ import RaisedButton from 'material-ui/RaisedButton';
 import TextField from 'material-ui/TextField';
 import DropDownMenu from 'material-ui/DropDownMenu';
 import MenuItem from 'material-ui/MenuItem';
+import Drawer from 'material-ui/Drawer';
+import FontIcon from 'material-ui/FontIcon';
 import axios from 'axios';
 import UploadPage from './UploadPage';
+import MenuIcon from '@material-ui/icons/Menu';
+import Button from '@material-ui/core/Button';
 var apiBaseUrl = "http://localhost:4000/api/";
+
+const styles = {
+  navBar: ('top': AppBar.height)
+}
+
+
+
+
 
 class Login extends Component {
   constructor(props){
@@ -38,9 +50,17 @@ class Login extends Component {
       password:'',
       menuValue:1,
       loginComponent:localloginComponent,
-      loginRole:'student'
+      loginRole:'student',
+      open: false
+
     }
+    this.toggleDrawer = this.toggleDrawer.bind(this);
   }
+
+  toggleDrawer(){
+      this.setState({open: true});
+  }
+
   componentWillMount(){
   // console.log("willmount prop values",this.props);
   if(this.props.role != undefined){
@@ -180,13 +200,43 @@ class Login extends Component {
                    loginComponent:localloginComponent,
                    loginRole:loginRole})
   }
+  handToggle = () => this.setState({open: !this.state.open});
+
+  showBar = () => {
+      this.setState({show: 'bar', open:false})
+  };
+
+  showFoo = () => {
+      this.setState({show: 'foo', open:false})
+  };
+
+
+
+  handleClose(){
+    this.setState({open: false})
+  }
+
+
+
+
   render() {
     return (
       <div>
         <MuiThemeProvider>
         <AppBar
+             iconClassNameRight="muidocs-icon-navigation-expand-more"
              title="Login"
+             iconElementLeft={<Button onClick={this.toggleDrawer}
+             className="material-icons"> menu </Button>}
            />
+        <Drawer
+          docked = {false}
+          width = {200}
+          open = {this.state.open}>
+          containerStyle={styles.navBar}
+            <MenuItem> Menu Item </MenuItem>
+            <MenuItem> Menu Item 2 </MenuItem>
+        </Drawer>
         </MuiThemeProvider>
         <MuiThemeProvider>
         <div>

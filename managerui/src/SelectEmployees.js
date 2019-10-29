@@ -1,98 +1,109 @@
-{/* Code put together with the help of https://react.semantic-ui.com/elements/list/#variations-celled */}
 import React from 'react'
-{/* This button is the one used for chat */}
-import { Button, Image, List } from 'semantic-ui-react'
-{/* This button is the one used for add or remove employee*/}
-import Button from 'react-bootstrap/Button'
+import Logo from './whiteLogo.png'
+import './SelectEmployees.css'
+import {Image, List} from 'semantic-ui-react'
+import { Button } from '@material-ui/core'
+import Checkbox from '@material-ui/core/Checkbox'
+import FormGroup from '@material-ui/core/FormGroup'
+import FormControlLabel from '@material-ui/core/FormControlLabel'
+//import {Button as Button2} from './Button.js'
 
-const ListExampleFloated = () => (
-  <List divided verticalAlign='middle'>
-    <List.Item>
-      <List.Content floated='right'>
-        <Button>Add</Button>
-      </List.Content>
-      <List.Content>
-        <List.Header>Employee One</List.Header>
-        Start a Conversation
-      </List.Content>
-    </List.Item>
-    <List.Item>
-      <List.Content floated='right'>
-        <Button>Add</Button>
-      </List.Content>
-      <List.Content>
-        <List.Header>Employee Two</List.Header>
-        Start a Conversation
-      </List.Content>
-    </List.Item>
-    <List.Item>
-      <List.Content floated='right'>
-        <Button>Add</Button>
-      </List.Content>
-      <<List.Content>
-        <List.Header>Employee Three</List.Header>
-        Start a Conversation
-      </List.Content>
-    </List.Item>
-    <List.Item>
-      <List.Content floated='right'>
-        <Button>Add</Button>
-      </List.Content>
-      <List.Content>
-        <List.Header>Employee Four</List.Header>
-        Start a Conversation
-      </List.Content>
-    </List.Item>
-  </List>
-)
-
-export default ListExampleFloated
+{/* Code put together with the help of https://react.semantic-ui.com/elements/list/#variations-celled */}
 
 
 
 
-function EmployeeSelection(){
-  return(
-    <div className = "EmployeeSelection">
-    <p style="text-align:right;"><Button variant="primary" size="sm">
-      Sign Out
-    </Button>
-    </p>
-    <h2>Chats</h2>
-    <div role="list" class="ui divided middle aligned list">
-      <div role="listitem" class="item">
-        <div class="right floated content"><button class="ui button">Add</button></div>
-        <div class="content">
-          <div class="header">Employee One</div>
-          Start a conversation
-        </div>
+  function EmployeeSelection(){
+    const [state, setState] = React.useState({
+    checkedA: false,
+    checkedB: false,
+    checkedC: false,
+    checkedD: false,
+    });
+
+    const handleChange = name => event => {
+    setState({ ...state, [name]: event.target.checked });
+    };
+
+    return(
+      <div className = "EmployeeSelection">
+      <div className = "Header">
+      <div className = "SOButton"><Button>
+        Sign Out
+      </Button>
+      <img src={Logo} alt= "SYRG logo" className = "image"/>
       </div>
-      <div role="listitem" class="item">
-        <div class="right floated content"><button class="ui button">Add</button></div>
-        <div class="content">
-          <div class="header">Employee Two</div>
-          Start a conversation
-        </div>
       </div>
-      <div role="listitem" class="item">
-        <div class="right floated content"><button class="ui button">Add</button></div>
-        <div class="content">
-          <div class="header">Employee Three</div>
-          Start a conversation
-        </div>
-      </div>
-      <div role="listitem" class="item">
-        <div class="right floated content"><button class="ui button">Add</button></div>
-        <div class="content">
-          <div class="header">Employee Four</div>
-          Start a conversation
-        </div>
-      </div>
-    </div>
-    <Button variant="link">Add New Employee</Button>
-    <Button variant="link">Remove Selected Employees</Button>
-    <Button variant="primary">Start Chat with Added Employees</Button>
-    </div>
-  )
+      <h1>Chats</h1>
 
-}
+      <FormGroup column>
+      <div class = "content">
+      <FormControlLabel
+          checked={state.checkedA}
+          onChange={handleChange('checkedA')}
+          value="checkedA"
+          control={<Checkbox color="primary" />}
+          label=<div class = "EmployeeName">Employee One</div>
+          labelPlacement="end"
+      />
+      <div> Start a conversation </div>
+      </div>
+      <p></p>
+      <div class = "content">
+      <FormControlLabel
+          checked={state.checkedB}
+          onChange={handleChange('checkedB')}
+          value="checkedB"
+          control={<Checkbox color="primary" />}
+          label=<div class = "EmployeeName">Employee Two</div>
+          labelPlacement="end"
+      />
+      <div> Start a conversation </div>
+      </div>
+      <p></p>
+      <div class = "content">
+      <FormControlLabel
+          checked={state.checkedC}
+          onChange={handleChange('checkedC')}
+          value="checkedC"
+          control={<Checkbox color="primary" />}
+          label=<div class = "EmployeeName">Employee Three</div>
+          labelPlacement="end"
+      />
+      <div> Start a conversation </div>
+      </div>
+      <p></p>
+      <div class = "content">
+      <FormControlLabel
+          checked={state.checkedD}
+          onChange={handleChange('checkedD')}
+          value="checkedD"
+          control={<Checkbox color="primary" />}
+          label=<div class = "EmployeeName">Employee Four</div>
+          labelPlacement="end"
+      />
+      <div> Start a conversation </div>
+      </div>
+      </FormGroup>
+
+      <p>
+      <div class = "CenteredButton">
+      <Button>Add New Employee</Button>
+      </div>
+      </p>
+      <p>
+      <div class = "CenteredButton">
+      <Button>Remove Selected Employees</Button>
+      </div>
+      </p>
+      <p>
+      <div class = "CenteredButton">
+      <Button variant="contained" color="primary">Start Chat with Selected Employees</Button>
+      </div>
+      </p>
+      </div>
+    )
+
+
+  }
+  export default EmployeeSelection

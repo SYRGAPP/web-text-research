@@ -1,0 +1,50 @@
+body {
+  background-color: white;
+}
+.item{
+  padding-top: 0px;
+  padding-bottom: 20px;
+}
+.leftfloat{
+  float: left;
+}
+.image{
+  float: left;
+  max-width: 20%;
+  height: auto;
+}
+.Header {
+  background-color: #3e4dea;
+  min-height: 15vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: blue;
+}
+.SOButton {
+  color: white;
+  text-align: right;
+  float: right;
+}
+.EmployeeName{
+  font-size: 18px;
+  font-weight: bold;
+  clear: both;
+
+}
+.Button {
+  color: #3e4dea;
+}
+.content{
+  background: #cce5ff;
+  padding-bottom: 15px;
+  padding-top: 5px;
+}
+.CenteredButton{
+  border: none;
+  color: blue;
+  text-align: center;
+  text-decoration: none;
+  font-size: 16px;
+}

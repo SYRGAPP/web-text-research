@@ -34,6 +34,7 @@ import ChevronRightIcon from '@material-ui/icons/ChevronRight';
 import Drawer from '@material-ui/core/Drawer';
 import clsx from 'clsx';
 
+//Code created with the help of material-ui weebsite and doc https://material-ui.com (MIT Licensed)
 
 const drawerWidth = 240;
 
@@ -313,7 +314,7 @@ export default function EmployeeSelection() {
               <AddIcon />
             </Fab>
             <div className={classes.grow} />
-            <ListItemText>  .</ListItemText>
+            <ListItemText>  </ListItemText>
             <IconButton color="inherit">
               <AddIcon />
             </IconButton>

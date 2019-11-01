@@ -9,14 +9,13 @@ class MessageList extends React.Component {
                 {this.props.messages.map(message => {
                     return (
                         <li key={message.id} className="list-of-messages">
-                        <div className="message">
-                            <div>
-                                {message.senderId + ': '}
+                            <div className="message-container">
+                                <div className={message.sent}>
+                                    <div>
+                                        {message.text}
+                                    </div>
+                                </div>
                             </div>
-                            <div>
-                                {message.text}
-                            </div>
-                        </div>
                         </li>
                     )
                 })}

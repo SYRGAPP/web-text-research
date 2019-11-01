@@ -29,6 +29,9 @@
     <property name="settings.editor.selected.configurable" value="vcs.Git" />
   </component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\andre\Desktop\SyrgApp\web-text-research\chatappIdeas" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\andre\Desktop\SyrgApp\web-text-research\chatappIdeas\src" />
     </key>
@@ -59,6 +62,11 @@
       <workItem from="1571509321009" duration="735000" />
       <workItem from="1571512881663" duration="16271000" />
       <workItem from="1571762050392" duration="364000" />
+      <workItem from="1572287785887" duration="122000" />
+      <workItem from="1572300400376" duration="232000" />
+      <workItem from="1572370589145" duration="2114000" />
+      <workItem from="1572457278126" duration="824000" />
+      <workItem from="1572535356734" duration="34000" />
     </task>
     <servers />
   </component>

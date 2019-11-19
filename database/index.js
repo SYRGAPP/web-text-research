@@ -66,9 +66,9 @@ app.get('/api/greeting', (req, res) => {
     res.send(JSON.stringify({ greeting: `Hello ${name}!` }));
 });
 
-// app.listen(3001, () =>
-//     console.log('Express server is running on localhost:3001')
-// );
+app.listen(3001, () =>
+    console.log('Express server is running on localhost:3001')
+);
 
 app.post('/api/messages', (req, res) => {
     res.header('Content-Type', 'application/json');
@@ -100,6 +100,6 @@ app.post('/sms', (req, res) => {
 });
 
 // The `listen` method launches a web server.
-app.listen().then(({ url }) => {
-  console.log(`🚀  Server ready at ${url}`);
-});
+// app.listen().then(({ url }) => {
+//   console.log(`🚀  Server ready at ${url}`);
+// });

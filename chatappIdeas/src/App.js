@@ -120,6 +120,20 @@ class App extends React.Component {
 
     }
 
+    // componentWillMount() {
+    //     fetch(
+    //         '/sms', {
+    //             method: 'GET',
+    //             headers: {
+    //                 'Content-Type': 'application/json'
+    //             },
+    //             body: messagebody
+    //         }
+    //     )
+    // }
+    
+    
+
   render() {
     return (
         <div className="App">

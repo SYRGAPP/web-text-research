@@ -5,6 +5,7 @@ const client = require('twilio')(
     process.env.TWILIO_ACCOUNT_SID,
     process.env.TWILIO_AUTH_TOKEN
 );
+const MessagingResponse = require('twilio').twiml.MessagingResponse;
 
 const app = express();
 app.use(bodyParser.urlencoded({ extended: false }));
@@ -37,3 +38,18 @@ app.post('/api/messages', (req, res) => {
             res.send(JSON.stringify({success: false}));
         })
 })
+
+app.post('/sms', (req, res) => {
+    const twiml = new MessagingResponse();
+
+    // Access the message body and the number it was sent from.
+    console.log(`Incoming message from ${req.body.From}: ${req.body.Body}`);
+
+    var messagebody = JSON.stringify(req.body.Body);
+    //this.props.receiveMessage(messagebody);
+    res.send(messagebody);
+    res.end(twiml.toString());
+});
+
+
+

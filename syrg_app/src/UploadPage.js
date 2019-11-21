@@ -4,10 +4,10 @@ import Drawer from 'material-ui/Drawer';
 import MenuItem from 'material-ui/MenuItem';
 import AppBar from 'material-ui/AppBar';
 import FontIcon from 'material-ui/FontIcon';
-import {blue500, red500, greenA200} from 'material-ui/styles/colors';
+import {blue500, red500, greenA200, deepPurple800} from 'material-ui/styles/colors';
 import UploadScreen from './UploadScreen';
 import Pastfiles from './Pastfiles';
-import LoginScreen from './Loginscreen'
+import LoginScreen from './LoginScreen'
 
 class App extends Component {
   constructor(props) {
@@ -65,7 +65,7 @@ class App extends Component {
               User Profile
               <a href="#"><FontIcon
                 className="material-icons drawerclosebutton"
-                color={blue500}
+                color={deepPurple800}
                 styles={{ top:10,}}
                 onClick={(event) => this.toggleDrawer(event)}
               >clear</FontIcon></a>

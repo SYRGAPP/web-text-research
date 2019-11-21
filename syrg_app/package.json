@@ -7,8 +7,13 @@
     "material-ui": "^0.20.2",
     "react": "^16.10.2",
     "react-dom": "^16.10.2",
+    "react-dropzone": "^10.1.10",
+    "react-native-gesture-handler": "^1.4.1",
+    "react-navigation": "^4.0.10",
+    "react-navigation-stack": "^1.10.3",
     "react-scripts": "3.2.0",
-    "react-tap-event-plugin": "^3.0.3"
+    "react-tap-event-plugin": "^3.0.3",
+    "superagent": "^5.1.0"
   },
   "scripts": {
     "start": "react-scripts start",

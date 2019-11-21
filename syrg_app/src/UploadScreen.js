@@ -17,7 +17,7 @@ import RaisedButton from 'material-ui/RaisedButton';
 import Drawer from 'material-ui/Drawer';
 import MenuItem from 'material-ui/MenuItem';
 import FontIcon from 'material-ui/FontIcon';
-import {blue500, red500, greenA200} from 'material-ui/styles/colors';
+import {blue500, red500, greenA200, deepPurple800} from 'material-ui/styles/colors';
 
 var apiBaseUrl = "http://localhost:4000/api/";
 /*
@@ -75,7 +75,7 @@ class UploadScreen extends Component {
         <MuiThemeProvider>
         <a href="#"><FontIcon
           className="material-icons customstyle"
-          color={blue500}
+          color={deepPurple800}
           onClick={(event) => this.handleCloseClick(event,i)}
         >clear</FontIcon></a>
         </MuiThemeProvider>
@@ -102,7 +102,7 @@ class UploadScreen extends Component {
             <MuiThemeProvider>
             <a href="#"><FontIcon
               className="material-icons customstyle"
-              color={blue500}
+              color={deepPurple800}
               styles={{ top:10,}}
               onClick={(event) => this.handleCloseClick(event,i)}
             >clear</FontIcon></a>

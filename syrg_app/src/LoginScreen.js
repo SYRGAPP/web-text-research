@@ -17,12 +17,12 @@ class Loginscreen extends Component {
       <div key={"Login-Div"}>
       <MuiThemeProvider>
         <div>
-           <RaisedButton label={"Register as Student"} primary={true} style={style} onClick={(event) => this.handleClick(event,'student')}/>
+           <RaisedButton label={"Register as Employee"} primary={true} style={style} onClick={(event) => this.handleClick(event,'Employee')}/>
        </div>
        </MuiThemeProvider>
        <MuiThemeProvider>
        <div>
-          <RaisedButton label={"Register as Teacher"} primary={true} style={style} onClick={(event) => this.handleClick(event,'teacher')}/>
+          <RaisedButton label={"Register as Manager"} primary={true} style={style} onClick={(event) => this.handleClick(event,'Manager')}/>
       </div>
       </MuiThemeProvider>
       </div>
@@ -33,15 +33,15 @@ class Loginscreen extends Component {
       loginscreen:[],
       loginmessage:'',
       loginButtons:loginButtons,
-      studentbuttonLabel:'Register as Student',
-      teacherbuttonLabel:'Register as Teacher',
+      employeebuttonLabel:'Register as Employee',
+      managerbuttonLabel:'Register as Manager',
       isLogin:true
     }
   }
   componentWillMount(){
     var loginscreen=[];
     loginscreen.push(<Login parentContext={this} appContext={this.props.appContext} key={"LoginScreen"}/>);
-    var loginmessage = "Not registered yet, Register Now";
+    var loginmessage = "Not registered yet? Register now.";
     this.setState({
                   loginscreen:loginscreen,
                   loginmessage:loginmessage
@@ -53,7 +53,7 @@ class Loginscreen extends Component {
     if(this.state.isLogin){
       let loginscreen=[];
       loginscreen.push(<Register parentContext={this} appContext={this.props.appContext} role={userRole}/>);
-      loginmessage = "Already registered.Go to Login";
+      loginmessage = "Already registered. Go to Login";
       let loginButtons=[];
       loginButtons.push(
         <div key="login-button">
@@ -77,12 +77,12 @@ class Loginscreen extends Component {
         <div>
         <MuiThemeProvider>
           <div>
-             <RaisedButton label={"Register as Student"} primary={true} style={style} onClick={(event) => this.handleClick(event,'student')}/>
+             <RaisedButton label={"Register as Employee"} primary={true} style={style} onClick={(event) => this.handleClick(event,'Employee')}/>
          </div>
          </MuiThemeProvider>
          <MuiThemeProvider>
          <div>
-            <RaisedButton label={"Register as Teacher"} primary={true} style={style} onClick={(event) => this.handleClick(event,'teacher')}/>
+            <RaisedButton label={"Register as Manager"} primary={true} style={style} onClick={(event) => this.handleClick(event,'Manager')}/>
         </div>
         </MuiThemeProvider>
         </div>

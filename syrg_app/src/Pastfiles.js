@@ -6,7 +6,7 @@ import Subheader from 'material-ui/Subheader';
 import Avatar from 'material-ui/Avatar';
 import FileFolder from 'material-ui/svg-icons/file/folder';
 import ActionAssignment from 'material-ui/svg-icons/action/assignment';
-import {blue500, yellow600,red500, greenA200} from 'material-ui/styles/colors';
+import {blue500, yellow600,red500, greenA200,deepPurple800} from 'material-ui/styles/colors';
 import EditorInsertChart from 'material-ui/svg-icons/editor/insert-chart';
 import Checkbox from 'material-ui/Checkbox';
 import './App.css';
@@ -43,7 +43,7 @@ componentDidMount(){
         for(var i in filestobeDisplayed){
           filenamesDiv.push(
             <ListItem
-              rightAvatar={<Avatar icon={<ActionAssignment />} backgroundColor={blue500} />}
+              rightAvatar={<Avatar icon={<ActionAssignment />} backgroundColor={deepPurple800} />}
               primaryText={filestobeDisplayed[i].name}
               leftCheckbox={<Checkbox value={filestobeDisplayed[i].name} onCheck={(event, value) => self.handleFileCheck(event,value)}/>}
             />

@@ -37,6 +37,7 @@ class SendMessageForm extends React.Component {
 
     handleSubmit(event) {
         event.preventDefault();
+
         this.props.sendMessage(this.state.message);
         this.setState({
              message: '',
@@ -57,7 +58,7 @@ class SendMessageForm extends React.Component {
                     onFocus={this.handleFocus}
                     onBlur={this.handleFocus}
                     value={this.state.message}
-                    placeHolder=""
+                    placeholder=""
                     type="text"
                 />
 

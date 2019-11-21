@@ -8,11 +8,11 @@ class MessageList extends React.Component {
             <div className="message-list">
                 {this.props.messages.map(message => {
                     return (
-                        <li key={message.id} className="list-of-messages">
+                        <li key={this.props.messages.id} className="list-of-messages">
                             <div className="message-container">
                                 <div className={message.sent}>
                                     <div>
-                                        {message.text}
+                                        {message.textBody}
                                     </div>
                                 </div>
                             </div>

@@ -111,23 +111,6 @@ class SignIn extends Component{
             onChange={e => this.setState({ email: e.target.value })}
             autoFocus
           />
-          <TextField
-            value = {password}
-            onChange={e => this.setState({ password: e.target.value })}
-            variant="outlined"
-            margin="normal"
-            required
-            fullWidth
-            name="password"
-            label="Password"
-            type="password"
-            id="password"
-            autoComplete="current-password"
-          />
-          <FormControlLabel
-            control={<Checkbox value="remember" color="primary" />}
-            label="Remember me"
-          />
           <Mutation mutation={LOGIN_MUTATION} variables={{ email, password, name }}>
             {loginMutation => (
                <Button
@@ -141,18 +124,6 @@ class SignIn extends Component{
             Sign In
           </Button>)}
             </Mutation>
-         <Grid container>
-            <Grid item xs>
-              <Link href="#" variant="body2">
-                Forgot password?
-              </Link>
-            </Grid>
-            <Grid item>
-              <Link href="#" variant="body2">
-                {"Don't have an account? Sign Up"}
-              </Link>
-            </Grid>
-          </Grid>
         </form>
       </div>
       <Box mt={8}>

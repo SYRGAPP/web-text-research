@@ -33,6 +33,7 @@ import ChevronLeftIcon from '@material-ui/icons/ChevronLeft';
 import ChevronRightIcon from '@material-ui/icons/ChevronRight';
 import Drawer from '@material-ui/core/Drawer';
 import clsx from 'clsx';
+import { Link } from 'react-router-dom'
 
 //Code created with the help of material-ui weebsite and doc https://material-ui.com (MIT Licensed)
 
@@ -310,7 +311,10 @@ export default function EmployeeSelection() {
             <IconButton edge="start" color="inherit" aria-label="open drawer">
               <SearchIcon />
             </IconButton>
-            <Fab color="secondary" aria-label="add" className={classes.fabButton}>
+            <Fab 
+            component = {Link}
+            to = "/chat/"
+            color="secondary" aria-label="add" className={classes.fabButton}>
               <AddIcon />
             </Fab>
             <div className={classes.grow} />

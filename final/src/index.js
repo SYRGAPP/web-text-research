@@ -4,6 +4,7 @@ import './index.css'
 import { Route, Link, BrowserRouter as Router } from 'react-router-dom'
 import SignIn from './screens/SignIn'
 import SelectEmployees from './screens/SelectEmployees'
+import Chat from './screens/Chat'
 import { ApolloProvider } from 'react-apollo'
 import { ApolloClient } from 'apollo-client'
 import { createHttpLink } from 'apollo-link-http'
@@ -30,11 +31,12 @@ const routing = (
           <Link to="/users">Select</Link>
         </li>
         <li>
-          <Link to="/contact">Chat</Link>
+          <Link to="/chat">Chat</Link>
         </li>
       </ul>
       <Route exact path="/" component={SignIn} />
       <Route path="/users" component={SelectEmployees} />
+      <Route path="/chat" component={Chat} />
     </div>
   </Router>
 )

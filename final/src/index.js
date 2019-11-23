@@ -30,18 +30,27 @@ const routing = (
         <li>
           <Link to="/users">Select</Link>
         </li>
-        <li>
-          <Link to="/chat">Chat</Link>
-        </li>
       </ul>
       <Route exact path="/" component={SignIn} />
       <Route path="/users" component={SelectEmployees} />
       <Route path="/chat" component={Chat} />
+      <Route path='/home' component={() => {
+          window.location.href = 'https://syrghq.com';
+          return null;
+        }}/>
+      <Route path='/support' component={() => {
+          window.location.href = 'https://support.syrg.app/hc/en-us';
+          return null;
+        }}/>
+      <Route path='/support' component={() => {
+          window.location.href = 'https://syrghq.com/solution';
+          return null;
+        }}/>
     </div>
   </Router>
 )
 
 ReactDOM.render(
-	routing, 
+	routing,
   document.getElementById('root')
   )

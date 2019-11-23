@@ -89,21 +89,25 @@ const icons = [
     id:1,
     primary: 'Home',
     person: <HomeIcon />,
+    link : '/home'
   },
   {
     id:2,
     primary: 'Chats',
     person: <ChatIcon />,
+    link: '/chat'
   },
   {
     id:3,
     primary: 'Contact Support',
-    person: <ContactSupportIcon />
+    person: <ContactSupportIcon />,
+    link: '/support'
   },
   {
     id:4,
     primary: 'Settings',
-    person: <SettingsIcon />
+    person: <SettingsIcon />,
+    link: '/settings'
   },
 
 ];
@@ -246,8 +250,10 @@ export default function EmployeeSelection() {
          <Typography className={classes.title} variant="h5" noWrap>
            Chats
          </Typography>
-         <IconButton edge="end" color="inherit">
-           <ExitToAppIcon />
+         <IconButton edge="end" color="inherit" component = {Link}
+         to = "/">
+           <ExitToAppIcon
+           />
          </IconButton>
        </Toolbar>
      </AppBar>
@@ -267,9 +273,11 @@ export default function EmployeeSelection() {
         </div>
         <Divider />
         <List>
-        {icons.map(({ id, primary, person }) => (
+        {icons.map(({ id, primary, person, link}) => (
           <React.Fragment key={id}>
-            <ListItem button>
+            <ListItem button
+            component = {Link}
+            to = {link}>
               <ListItemIcon>
                 {person}
               </ListItemIcon>
@@ -311,7 +319,7 @@ export default function EmployeeSelection() {
             <IconButton edge="start" color="inherit" aria-label="open drawer">
               <SearchIcon />
             </IconButton>
-            <Fab 
+            <Fab
             component = {Link}
             to = "/chat/"
             color="secondary" aria-label="add" className={classes.fabButton}>

@@ -2,6 +2,7 @@ const { ApolloServer, gql } = require('apollo-server-express');
 const express = require('express');
 const bodyParser = require('body-parser');
 const pino = require('express-pino-logger')();
+const dotenv = require('dotenv').config();
 const client = require('twilio')(
     process.env.TWILIO_ACCOUNT_SID,
     process.env.TWILIO_AUTH_TOKEN
@@ -16,11 +17,11 @@ const {find, filter} = require('lodash');
 const typeDefs = gql`
   # Comments in GraphQL strings (such as this one) start with the hash (#) symbol.
   # This "Employee" type defines the queryable fields for every Employee in our data source.
-    
+
   type Query {
     managers: Manager
   }
-    
+
   type Employee {
     employeeName: String
     employeeId: Int
@@ -34,11 +35,11 @@ const typeDefs = gql`
   }
   type Manager {
     employees: Employee
-  }  
-  
+  }
+
   # The "Query" type is special: it lists all of the available queries that
   # clients can execute, along with the return type for each.
-  
+
 `;
 const convo = [
     {
@@ -240,7 +241,7 @@ app.post('/api/messages', (req, res) => {
     client.messages
         .create({
             from: process.env.TWILIO_PHONE_NUMBER,
-            to: '+18026815503',
+            to: '+12052932587',
             body: req.body.text
         })
         .then(() => {
@@ -272,11 +273,11 @@ app.post('/sms', (req, res) => {
 });
 
 //const http = require('http')(80);
-const io = require('socket.io')(3002);
+const io = require('socket.io')(80);
 const path = require('path');
 
 io.listen(3002, function(){
-    console.log('Your server is up and running on Port 3000. Good job!');
+    console.log('Your server is up and running on Port 3002. Good job!');
 });
 
 var msg = io

@@ -15,7 +15,7 @@ Managers have an account on the application that allows them to start conversati
 ## Running the Application
 1. `cd` into the directory containing the cloned code
 2. Run `docker build -t syrgtest` to build the docker image
-3. Run `docker run -p 3000:3000 -e github="https://github.com/SYRGAPP/web-text-research --branch experiment" -it syrgtest` to create the container
+3. Run `docker run -p 3000:3000 -e github="https://github.com/SYRGAPP/web-text-research --branch newExperiment" -it syrgtest` to create the container
 4. Go to localhost:3000 in your web browser to view and interact with the app.
 
 ## Front End Components Documentation

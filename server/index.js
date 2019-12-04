@@ -273,15 +273,14 @@ app.post('/sms', (req, res) => {
 });
 
 //const http = require('http')(80);
-const io = require('socket.io')(3772);
+const io = require('socket.io')(3774);
 const path = require('path');
 
-io.listen(3772, function(){
+io.listen(8080, function(){
     console.log('Your server is up and running on Port 3002. Good job!');
 });
 
-var msg = io
-    .of('/socket')
+var msg = io.of('/socket')
 
 
 // // //The `listen` method launches a web server.

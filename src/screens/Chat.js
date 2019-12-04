@@ -118,7 +118,7 @@ class Chat extends React.Component {
                     <div>
                     <script src="/socket.io/socket.io.js"></script>
                     <script>
-                        var msg = io('http://localhost:3772/socket');
+                        var msg = io('http://localhost:8080/socket');
                         msg.on('onMessage', function () {
                         this.componentDidMount()
                     });

@@ -43,7 +43,12 @@
     "server": "node-env-run server --exec nodemon | pino-colada",
     "dev": "run-p server start"
   },
-  "proxy": "http://localhost:3001",
+  "proxy": {
+	"/api": {
+	 "target":  "http://localhost:3001",
+	 "secure": false
+	}
+},
   "eslintConfig": {
     "extends": "react-app"
   },

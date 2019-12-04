@@ -23,14 +23,6 @@ const client = new ApolloClient({
 const routing = (
   <Router>
     <div>
-      <ul>
-        <li>
-          <Link to="/">Sign In</Link>
-        </li>
-        <li>
-          <Link to="/users">Select</Link>
-        </li>
-      </ul>
       <Route exact path="/" component={SignIn} />
       <Route path="/users" component={SelectEmployees} />
       <Route path="/chat" component={Chat} />

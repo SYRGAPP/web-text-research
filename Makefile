@@ -5,7 +5,8 @@ build:
 	echo "nothing to build"
 
 run:
-	npm start
+	node server/index.js&
+	npm start 
 
 dockertest:
 	make setup

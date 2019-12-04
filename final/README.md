@@ -1,68 +1,34 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# NEED TO ADD (REMOVE THIS SECTION BEFORE FINAL SUBMISSION)
+- Managers can add/remove employees with name + phone number to the system.
+- Managers can select a couple of employees, and send them a text message from the web-application, to initiate a chat with them. The initial message contains a fixed greeting line from the system and a custom message from the manager. (PARTIALLY DONE JUST NEED TO ADD FIXED GREETING LINE)
+- Employees receive the text messages on their phone. The text message contains the content of the manager’s message plus the manager’s name. (PARTIALLY DONE JUST NEED TO ADD MANAGERS NAME)
 
-## Available Scripts
+# SYRG PWA
+This project was created for SYRG to add functionality to their already existing app.
+This Progressive Web Application was created with backend using graphql built on express, and a
+front end using node js. The goal was to create a web-sms chat application that managers can use to communicate with their employees.
+Managers have an account on the application that allows them to start conversations with any of their employees and see any ongoing messages other managers within their company have started; and continue them if needed. Managers are able to send a sms from the web application, once employees receive the message on their phone they are able to respond to the manager directly in the text thread and the manager will be able to continue the conversation on the application.
 
-In the project directory, you can run:
+## Requirements
+- A [Docker Desktop](https://www.docker.com/products/docker-desktop) downloaded
 
-### `yarn start`
+## Running the Application
+1. `cd` into the directory containing the cloned code
+2. Run `docker build -t syrgtest` to build the docker image
+3. Run `docker run -p 3000:3000 -e github="https://github.com/SYRGAPP/web-text-research --branch experiment" -it syrgtest` to create the container
+4. Go to localhost:3000 in your web browser to view and interact with the app.
 
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
-
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
-
-### `yarn test`
-
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `yarn build`
-
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `yarn eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (Webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
-
-### Analyzing the Bundle Size
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
-
-### Making a Progressive Web App
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `yarn build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+## Front End Components Documentation
+- [React](https://reactnavigation.org/docs/en/getting-started.html)
+- [Material UI](https://material-ui.com/getting-started/installation/)
+- [Apollo Client](https://www.apollographql.com/docs/react/)
+## Back End Components Documentation
+- [Express](https://expressjs.com/en/4x/api.html)
+- [Graphql](https://graphql.org/learn/)
+- [Apollo Server](https://www.apollographql.com/docs/apollo-server/)
+- Twillio
+## Twillio
+This application uses twillio to allow for SMS-Web and Web-SMS messages. More information about the twillio SMS API can be found [here](https://www.twilio.com/docs/sms)
+## Known Bugs
+- Texts and messages can take up to a minute to load and while loading you cannot move off the page
+- Once you click a link leading to an external link you cant press the back button

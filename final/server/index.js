@@ -241,7 +241,7 @@ app.post('/api/messages', (req, res) => {
     client.messages
         .create({
             from: process.env.TWILIO_PHONE_NUMBER,
-            to: '+12052932587',
+            to: '+18026815503',
             body: req.body.text
         })
         .then(() => {
@@ -273,7 +273,7 @@ app.post('/sms', (req, res) => {
 });
 
 //const http = require('http')(80);
-const io = require('socket.io')(80);
+const io = require('socket.io')(3002);
 const path = require('path');
 
 io.listen(3002, function(){

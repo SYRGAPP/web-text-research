@@ -6,6 +6,7 @@ build:
 
 run:
 	npm run dev
+	node index.js
 
 dockertest:
 	make setup

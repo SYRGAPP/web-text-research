@@ -23,7 +23,7 @@ Managers have an account on the application that allows them to start conversati
 `SKIP_PREFLIGHT_CHECK=true
 TWILIO_ACCOUNT_SID='XXXXXX_YOUR_ACCOUNT_SID_XXXXXX'
 TWILIO_AUTH_TOKEN='XXXXXX_YOUR_AUTH_TOKEN_XXXXXX'
-TWILIO_PHONE_NUMBER='YOUR_TWILLIO_PHONE_NUMBER'``
+TWILIO_PHONE_NUMBER='YOUR_TWILLIO_PHONE_NUMBER'`
 
 ## Front End Components Documentation
 - [React](https://reactnavigation.org/docs/en/getting-started.html)

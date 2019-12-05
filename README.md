@@ -1,8 +1,3 @@
-# NEED TO ADD (REMOVE THIS SECTION BEFORE FINAL SUBMISSION)
-- Managers can add/remove employees with name + phone number to the system.
-- Managers can select a couple of employees, and send them a text message from the web-application, to initiate a chat with them. The initial message contains a fixed greeting line from the system and a custom message from the manager. (PARTIALLY DONE JUST NEED TO ADD FIXED GREETING LINE)
-- Employees receive the text messages on their phone. The text message contains the content of the manager’s message plus the manager’s name. (PARTIALLY DONE JUST NEED TO ADD MANAGERS NAME)
-
 # SYRG PWA
 This project was created for SYRG to add functionality to their already existing app.
 This Progressive Web Application was created with backend using graphql built on express, and a
@@ -11,12 +6,24 @@ Managers have an account on the application that allows them to start conversati
 
 ## Requirements
 - A [Docker Desktop](https://www.docker.com/products/docker-desktop) downloaded
+- [Ngrok](https://ngrok.com/download) downloaded onto your computer
+- A [Twillo](https://www.twilio.com) account
 
 ## Running the Application
-1. `cd` into the directory containing the cloned code
-2. Run `docker build -t syrgtest .` to build the docker image
-3. Run `docker run -p 3000:3000 -e github="https://github.com/SYRGAPP/web-text-research --branch newExperiment" -it syrgtest` to create the container
-4. Go to localhost:3000 in your web browser to view and interact with the app.
+1. Create an .env file in the main directory (See below for template)
+2. Start the Docker Desktop
+3. Once the docker desktop is running run `docker run -p 3000:3000 -p 8080:8080 -p 3001:3001 -p 3774:3774 -it syrgtest`
+4. Run `./ngrok http 3001`
+5. Copy the forwarding http displayed in the terminal
+6. Go to the [twillio phone number console](https://www.twilio.com/console/phone-numbers/PNbd25f9b3fd5d45a108829705ea9fbfff)
+7. In the as messaging comes in webhook field paste the forwarding http with "/sms" at the end  
+8. Go to localhost:3000 in your web browser to view and interact with the app.
+
+## .env File Template
+`SKIP_PREFLIGHT_CHECK=true
+TWILIO_ACCOUNT_SID='XXXXXX_YOUR_ACCOUNT_SID_XXXXXX'
+TWILIO_AUTH_TOKEN='XXXXXX_YOUR_AUTH_TOKEN_XXXXXX'
+TWILIO_PHONE_NUMBER='YOUR_TWILLIO_PHONE_NUMBER'``
 
 ## Front End Components Documentation
 - [React](https://reactnavigation.org/docs/en/getting-started.html)
@@ -30,5 +37,6 @@ Managers have an account on the application that allows them to start conversati
 ## Twillio
 This application uses twillio to allow for SMS-Web and Web-SMS messages. More information about the twillio SMS API can be found [here](https://www.twilio.com/docs/sms)
 ## Known Bugs
+- Messages page
 - Texts and messages can take up to a minute to load and while loading you cannot move off the page
 - Once you click a link leading to an external link you cant press the back button

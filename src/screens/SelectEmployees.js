@@ -1,6 +1,5 @@
 import React from 'react';
 import { makeStyles, useTheme  } from '@material-ui/core/styles';
-import Logo from './whiteLogo.png'
 import ProPic from './propic.jpg'
 import { Button } from '@material-ui/core'
 import AppBar from '@material-ui/core/AppBar';
@@ -42,45 +41,52 @@ const drawerWidth = 240;
 const messages = [
   {
     id: 1,
-    primary: 'Employee One',
+    primary: 'Sarah Jones',
     secondary: 'Could I come in a half hour later?',
     person: ProPic,
+    link: '/chat',
   },
   {
     id: 2,
-    primary: 'Employee Two',
+    primary: 'Dylan Sheehan',
     secondary: 'Yeah sure I can take that shift!',
     person: ProPic,
+    link: '/chat',
   },
   {
     id: 3,
-    primary: 'Employee Three',
+    primary: 'Michelle Cora',
     secondary: "Start a conversation",
     person: ProPic,
+    link: '/chat',
   },
   {
     id: 4,
-    primary: 'Employee Four',
+    primary: 'Denver Cassell',
     secondary: "Start a conversation",
     person: ProPic,
+    link: '/chat',
   },
   {
     id: 5,
-    primary: 'Employee Five',
+    primary: 'Ernest Kirkwood',
     secondary: "Start a conversation",
     person: ProPic,
+    link: '/chat',
   },
   {
     id: 6,
-    primary: 'Employee Six',
+    primary: 'Simone Tinner',
     secondary: "Start a conversation",
     person: ProPic,
+    link: '/chat',
   },
   {
     id: 7,
-    primary: 'Employee Seven',
+    primary: 'Kelly Cron',
     secondary: "Start a conversation",
     person: ProPic,
+    link: '/chat',
   },
 ];
 
@@ -95,7 +101,7 @@ const icons = [
     id:2,
     primary: 'Chats',
     person: <ChatIcon />,
-    link: '/chat'
+    link: '/users'
   },
   {
     id:3,
@@ -290,11 +296,12 @@ export default function EmployeeSelection() {
       </Drawer>
       <Paper square className={classes.paper}>
         <List className={classes.list}>
-          {messages.map(({ id, primary, secondary, person, value }) => (
+          {messages.map(({ id, primary, secondary, person, value, link }) => (
             <React.Fragment key={id}>
               {id === 1 && <ListSubheader className={classes.subheader}>Active Conversations</ListSubheader>}
               {id === 3 && <ListSubheader className={classes.subheader}>Start a Conversation</ListSubheader>}
-              <ListItem button>
+              <ListItem button component = {Link}
+              to = {link}>
                 <ListItemAvatar>
                   <Avatar alt="Profile Picture" src={person} />
                 </ListItemAvatar>
@@ -316,9 +323,6 @@ export default function EmployeeSelection() {
         //https://material-ui.com/components/paper/#paper
         <AppBar color="primary" className={classes.appBar}>
           <Toolbar>
-            <IconButton edge="start" color="inherit" aria-label="open drawer">
-              <SearchIcon />
-            </IconButton>
             <Fab
             component = {Link}
             to = "/chat/"
@@ -327,12 +331,6 @@ export default function EmployeeSelection() {
             </Fab>
             <div className={classes.grow} />
             <ListItemText>  </ListItemText>
-            <IconButton color="inherit">
-              <AddIcon />
-            </IconButton>
-            <IconButton edge="end" color="inherit">
-              <DeleteIcon />
-            </IconButton>
           </Toolbar>
         </AppBar>
         </React.Fragment>

@@ -59,69 +59,65 @@ const convo = [
 const MESSAGE_DATA = [
     {
         sent: 'received-msg',
-        textBody: 'Hi'
+        textBody: 'Hey do you still need that shift covered'
     },
     {
         sent: 'sent-msg',
-        textBody: 'Hey!'
+        textBody: 'No thanks someone else already covered it'
     },
     {
         sent: 'sent-msg',
-        textBody: 'How are you?'
+        textBody: 'I might need a different shift covered later'
     },
     {
         sent: 'received-msg',
-        textBody: 'I am great!'
+        textBody: 'Ok just let me know'
     },
     {
         sent: 'sent-msg',
-        textBody: 'How are you?'
+        textBody: 'Alright I will'
     },
     {
         sent: 'sent-msg',
-        textBody: 'Good.'
+        textBody: 'Hey I need the closing shift covered in two days'
     },
     {
         sent: 'received-msg',
-        textBody: 'Lets have a conversation'
+        textBody: 'Yeah I can cover that'
     },
     {
         sent: 'sent-msg',
-        textBody: 'Yes'
+        textBody: 'Awesome Thanks'
     },
     {
         sent: 'received-msg',
-        textBody: 'Ok.'
+        textBody: 'No Problem'
     },
     {
         sent: 'sent-msg',
-        textBody: 'How are you doing?'
+        textBody: 'Make sure you remember to lock up'
     },
     {
         sent: 'received-msg',
-        textBody: 'Im good. you?'
+        textBody: 'I will'
     },
     {
         sent: 'sent-msg',
-        textBody: 'I am good'
+        textBody: 'I just had someone call out'
     },
     {
         sent: 'sent-msg',
-        textBody:  'Are you?'
+        textBody:  'Can you cover the 3-9 shift?'
     },
     {
         sent: 'received-msg',
-        textBody: 'Yes.'
-    },
-    {
-        sent: 'sent-msg',
-        textBody: 'Ok.'
+        textBody: 'Could I come in a half hour later?'
     },
 ]
 
 const employees = [
     {
-        employeeName: 'Employee One',
+        employeeName: 'Sarah Jones',
         employeeId: 1,
         phoneNumber: '6175435678',
         proPic: './propic.jpeg',

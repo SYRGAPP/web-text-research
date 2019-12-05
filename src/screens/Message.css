@@ -22,8 +22,8 @@
 }
 
 .message-list::-webkit-scrollbar {
-  width: 0.833em;
-  margin-left: 0.833em;
+  width: 15px;
+  margin-left: 5px;
 }
 
 .message-list::-webkit-scrollbar-track {
@@ -32,7 +32,7 @@
 
 .message-list::-webkit-scrollbar-thumb {
   background: #888;
-  border-radius: 0.833em;
+  border-radius: 15px;
 }
 
 .message-list::-webkit-scrollbar-thumb:hover {
@@ -42,17 +42,17 @@
 .message-container{
   display: block;
   width: 100%;
-  padding-bottom: 0.833em;
+  padding-bottom: 60px;
   font-size: 18px;
 }
 
 .sent-msg {
   display: block;
   float: right;
-  margin-right: 1.875em;
-  margin-left: 1.875em;
-  margin-bottom: 0.3125em;
-  padding: 0.625em;
+  margin-right: 30px;
+  margin-left: 30px;
+  margin-bottom: 5px;
+  padding: 10px;
   background-color: #3e4dea;
   border-radius: 0px;
   color: white;
@@ -62,22 +62,22 @@
 .received-msg {
   display: flex;
   float: left;
-  margin-left: 1.875em;
-  margin-right: 1.875em;
-  margin-bottom: 0.3125em;
-  padding: 0.625em;
+  margin-left: 30px;
+  margin-right: 30px;
+  margin-bottom: 5px;
+  padding: 10px;
   background-color: lightgrey;
   border-radius: 0px;
   color: white;
 }
 
 .message-username {
-  margin-left: 0.3125em;
+  margin-left: 5px;
   color: darkgrey;
 }
 
 .message-text {
-  margin-left: 0.3125em;
+  margin-left: 5px;
   display: inline;
 }
 
@@ -94,8 +94,8 @@
 .back-to-chats {
   height: 2vh;
   outline: none;
-  margin-left: 0.833em;
-  margin-top: 0.833em;
+  margin-left: 15px;
+  margin-top: 15px;
   background-color: white;
   border: 0;
   float: left;
@@ -107,8 +107,8 @@
 .sign-out {
   height: 2vh;
   outline: none;
-  margin-right: 0.833em;
-  margin-top: 0.833em;
+  margin-right: 15px;
+  margin-top: 15px;
   background-color: white;
   border: 0;
   float: right;
@@ -119,7 +119,7 @@
 
 .employee-name {
   color: #636363;
-  margin-left: 0.8333333333333334em;
+  margin-left: 30px;
   font-weight: bold;
   font-size: 36px;
   position: absolute;
@@ -135,7 +135,7 @@
 
 .message-label {
   color: #3e4dea;
-  margin-left: 0.3125em;
+  margin-left: 5px;
   -webkit-transition: 0.5s;
   -moz-transition: 0.5s;
   -o-transition: 0.5s;
@@ -144,7 +144,7 @@
 
 .message-label.enabled{
   color: white;
-  margin-left: 0.3125em;
+  margin-left: 5px;
   -webkit-transition: 0.5s;
   -moz-transition: 0.5s;
   -o-transition: 0.5s;
@@ -159,12 +159,12 @@
   background-color: white;
   border-color: white;
   color: darkgrey;
-  margin-left: 0.3125em;
+  margin-left: 5px;
 }
 
 .message-form input{
   outline: none;
   border: none;
-  margin-left: 0.625em;
+  margin-left: 10px;
   width: 100%;
 }

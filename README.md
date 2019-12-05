@@ -20,10 +20,10 @@ Managers have an account on the application that allows them to start conversati
 8. Go to localhost:3000 in your web browser to view and interact with the app.
 
 ## .env File Template
-`SKIP_PREFLIGHT_CHECK=true`
-`TWILIO_ACCOUNT_SID='XXXXXX_YOUR_ACCOUNT_SID_XXXXXX'`
-`TWILIO_AUTH_TOKEN='XXXXXX_YOUR_AUTH_TOKEN_XXXXXX'`
-`TWILIO_PHONE_NUMBER='YOUR_TWILLIO_PHONE_NUMBER'`
+SKIP_PREFLIGHT_CHECK=true
+TWILIO_ACCOUNT_SID='XXXXXX_YOUR_ACCOUNT_SID_XXXXXX'
+TWILIO_AUTH_TOKEN='XXXXXX_YOUR_AUTH_TOKEN_XXXXXX'
+TWILIO_PHONE_NUMBER='YOUR_TWILLIO_PHONE_NUMBER'
 
 ## Front End Components Documentation
 - [React](https://reactnavigation.org/docs/en/getting-started.html)

@@ -7,7 +7,7 @@ class Bar extends React.Component {
     render() {
         return (
             <div className="upper-bar">
-                <div>
+                <div className="upper-bar-button-container">
                 <button className="back-to-chats">
                     Back to chats
                 </button>

@@ -7,10 +7,6 @@
   font-family: "Roboto Light";
 }
 
-.App-logo {
-  height: 40vmin;
-}
-
 .message-list {
   height: 76vh;
   width: 100vw;
@@ -83,6 +79,7 @@
 
 
 .upper-bar {
+  height: 14%;
   height: 14vh;
   width: 100vw;
 }
@@ -92,10 +89,9 @@
 }
 
 .back-to-chats {
-  height: 2vh;
+  height: 100%;
   outline: none;
   margin-left: 15px;
-  margin-top: 15px;
   background-color: white;
   border: 0;
   float: left;
@@ -105,10 +101,9 @@
 }
 
 .sign-out {
-  height: 2vh;
+  height: 100%;
   outline: none;
   margin-right: 15px;
-  margin-top: 15px;
   background-color: white;
   border: 0;
   float: right;
@@ -117,19 +112,21 @@
   font-size: 18px;
 }
 
+.upper-bar-button-container {
+  height: 50%;
+}
+
 .employee-name {
   color: #636363;
   margin-left: 30px;
   font-weight: bold;
-  font-size: 36px;
-  position: absolute;
-  top: 50%;
+  font-size: 200%;
 
 }
 
 .employee-name-container {
   display: block;
-  height: 12vh;
+  height: 50%;
   position: relative;
 }
 

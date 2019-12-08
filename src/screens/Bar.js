@@ -10,8 +10,12 @@ class Bar extends React.Component {
         return (
             <div className="upper-bar">
                 <div className="upper-bar-button-container">
-                <button component = {Link}
-                        to = '/users' className="back-to-chats">
+                <button
+                    component = {Link}
+                    to = '/users/'
+                    className="back-to-chats"
+                    type="submit"
+                >
                     Back to chats
                 </button>
 

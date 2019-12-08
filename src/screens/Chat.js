@@ -8,14 +8,19 @@ import { makeStyles } from '@material-ui/core/styles';
 import Grid from '@material-ui/core/Grid'
 import {useQuery} from "@apollo/react-hooks";
 import gql from 'graphql-tag';
+
+
 //Chat page
 //Based on code from this video -> https://www.youtube.com/watch?v=jFNHerJqvFw
 
+//Array which will store the message data for the conversation between
+//manager and employee
 var MESSAGE_DATA = [];
 
 
-
+//The URL which the graphql queries are made to
 const url = `http://localhost:3001/graphql`;
+//The format of the query done to get the conversation data
 const query = `
     {managers
         {employees 
@@ -31,6 +36,7 @@ const query = `
     }
     }
     `
+//The JSON formatted to fetch conversation data
 const opts = {
     method: "POST",
     headers: { "Content-Type": "application/json" },
@@ -38,7 +44,7 @@ const opts = {
 };
 
 class Chat extends React.Component {
-    //MESSAGE_DATA = this.MESSAGE_DATA;
+
     constructor() {
         super()
         this.state = {
@@ -49,10 +55,9 @@ class Chat extends React.Component {
         this.getMessageData = this.getMessageData.bind(this);
     }
 
-
-
-
-
+    //Function called to send a POST request to the express server and pass through
+    //the text from 'SendMessageForm' to send an SMS to an employee and add the text to the database. It also calls
+    //componentDidMount in order to update the MessageList component based on the new text in the database.
     sendMessage = (text) =>{
 
         var msgtext = {text: text};
@@ -86,7 +91,9 @@ class Chat extends React.Component {
     }
 
 
-
+    //An async function which grabs the message data in order to
+    //display a conversation between employee and manager. It sets the state
+    //of messages to the newly updated message data.
     async getMessageData() {
         const response = await fetch(url, opts);
         const json = await response.json();
@@ -95,18 +102,9 @@ class Chat extends React.Component {
         this.setState({state: this.state})
     }
 
-
+    //Simply calls getMessageData
     componentDidMount() {
-
-        // if(data===null){
-        //
-        // } else {
-        //     this.setState({messages: data.managers.employees.convo})
-        // }
-        //this.setState({messages: MESSAGE_DATA})
         this.getMessageData()
-
-        //this.setState({state: this.state})
     }
 
 

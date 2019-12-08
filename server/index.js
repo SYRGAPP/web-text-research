@@ -15,9 +15,6 @@ const {find, filter} = require('lodash');
 // that together define the "shape" of queries that are executed against
 // your data.
 const typeDefs = gql`
-  # Comments in GraphQL strings (such as this one) start with the hash (#) symbol.
-  # This "Employee" type defines the queryable fields for every Employee in our data source.
-
   type Query {
     managers: Manager
   }
@@ -37,10 +34,9 @@ const typeDefs = gql`
     employees: Employee
   }
 
-  # The "Query" type is special: it lists all of the available queries that
-  # clients can execute, along with the return type for each.
-
 `;
+
+//A small sample conversation since we don't have a real database set up
 const convo = [
     {
         sent: 'sent-msg',
@@ -56,6 +52,7 @@ const convo = [
     },
 ];
 
+//Another conversation example to query from since there is not a real database set up
 const MESSAGE_DATA = [
     {
         sent: 'received-msg',
@@ -119,6 +116,7 @@ const MESSAGE_DATA = [
     },
 ]
 
+//Sample employee entries in our 'database'
 const employees = [
     {
         employeeName: 'Employee One',
@@ -137,7 +135,7 @@ const employees = [
 ];
 
 
-
+//Sample Managers
 const managers = [
     {
         employees: employees,
@@ -187,13 +185,10 @@ const resolvers = {
 
 // The ApolloServer constructor requires two parameters: your schema
 // definition and your set of resolvers.
-//const server = new ApolloServer({ typeDefs, resolvers, introspection: true, playground: true});
 const server = new ApolloServer({ typeDefs, resolvers});
 
-
+//Set up the express server here
 const app = express();
-
-
 server.applyMiddleware({ app });
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
@@ -205,33 +200,13 @@ app.get('/api/greeting', (req, res) => {
 });
 
 
-
+//Set up express server on 3001
 app.listen(3001, () =>
     console.log('Express server is running on localhost:3001')
 );
 
-
-
-// app.use(express.static('public'));
-//
-// app.get('/socket', function (req, res){
-//     res.sendFile(path.join(__dirname, '/src/App.js'));
-// });
-//
-// io.on('connection', (socket) => {
-//     socket.emit('myMessage', `A new user, ${Date.now()}, has connected`);
-// });
-//
-// http.listen('http://localhost:3001/socket', function(){
-//     console.log('Your server is up and running on Port 3000. Good job!');
-// });
-//
-// io.on('connection', (socket) => {
-//     console.log('Someone has connected.');
-// });
-
-
-
+//When triggered from SendMessage() in Chat.js this makes a POST request to twilio API to send an SMS containing
+//the text information and pushes the new text information to the database
 app.post('/api/messages', (req, res) => {
     MESSAGE_DATA.push({
         sent: 'sent-msg',
@@ -253,6 +228,11 @@ app.post('/api/messages', (req, res) => {
         })
 })
 
+
+//When a text is sent back from the employee, a twilio webhook causes a POST request to be sent.
+//This pushes the new text information to the database and the socket emits a message back to
+//Chat.js which causes the components to update and render the new message.
+//(Requires ngrok to be set up for the correct port and configured on twilio)
 app.post('/sms', (req, res) => {
     const twiml = new MessagingResponse();
     MESSAGE_DATA.push({
@@ -265,36 +245,18 @@ app.post('/sms', (req, res) => {
         everyone: 'in'
         , '/socket': 'will get'
     });
-
-
-    //this.props.receiveMessage(messagebody);
-
     res.end(twiml.toString());
 });
 
-//const http = require('http')(80);
+
+//Set up a socket on 3774
 const io = require('socket.io')(3774);
 const path = require('path');
 
+//Set socket to listen on 8080 so the front end can update when this emits a message
 io.listen(8080, function(){
     console.log('Your server is up and running on Port 3002. Good job!');
 });
 
 var msg = io.of('/socket')
 
-
-// // //The `listen` method launches a web server.
-// server.listen().then(({ url }) => {
-//     console.log(`🚀  Server ready at ${url}`);
-// });
-//
-// msg.on('onMessage', function (socket) {
-//     msg.emit('a message', {
-//         that: 'only'
-//         , '/socket': 'will get'
-//     });
-//     msg.emit('a message', {
-//         everyone: 'in'
-//         , '/socket': 'will get'
-//     });
-// });

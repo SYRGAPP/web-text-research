@@ -1,5 +1,8 @@
 import React from 'react';
 
+//Component for the form in which a user inputs a message
+//to be sent via SMS to an employee. Located at the bottom
+//of the chat page.
 
 class SendMessageForm extends React.Component {
 

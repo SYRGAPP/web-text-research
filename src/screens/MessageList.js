@@ -1,6 +1,9 @@
 import React from 'react';
 import Message from './Message.js'
 
+//Component for the list of messages in a current conversation
+//between manager and employee. This is displayed on the chat
+//page
 
 class MessageList extends React.Component {
     render() {

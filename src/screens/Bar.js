@@ -1,5 +1,7 @@
 import React from 'react';
 import logo from './syrglogo.png';
+import {Link} from "react-router-dom";
+import ListItem from "@material-ui/core/ListItem";
 
 
 class Bar extends React.Component {
@@ -8,7 +10,8 @@ class Bar extends React.Component {
         return (
             <div className="upper-bar">
                 <div className="upper-bar-button-container">
-                <button className="back-to-chats">
+                <button component = {Link}
+                        to = '/users' className="back-to-chats">
                     Back to chats
                 </button>
 

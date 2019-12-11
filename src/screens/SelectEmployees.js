@@ -39,6 +39,8 @@ import { Link } from 'react-router-dom'
 
 const drawerWidth = 240;
 
+//Hardcoded employees avil to chat to with id, name, the last message sent, and the icon for them
+// Before this is deployed this should be replaced with a query to the database to get accurate information
 const messages = [
   {
     id: 1,
@@ -84,6 +86,7 @@ const messages = [
   },
 ];
 
+// Icons that are used for the side bar with links to the proper pages/ external web links - links are made in index.js
 const icons = [
   {
     id:1,
@@ -112,6 +115,7 @@ const icons = [
 
 ];
 
+// Define the styles of the page including the app bar, the side bar and its shifting, layout, etc
 const useStyles = makeStyles(theme => ({
   text: {
     padding: theme.spacing(2, 2, 0),
@@ -168,9 +172,6 @@ const useStyles = makeStyles(theme => ({
     right: 0,
     margin: '0 auto',
   },
-  menuButton: {
-    marginRight: theme.spacing(2),
-  },
   content: {
     flexGrow: 1,
     padding: theme.spacing(3),
@@ -207,12 +208,16 @@ const useStyles = makeStyles(theme => ({
 }));
 
 //https://material-ui.com/components/lists/
+// Where the page is put together and rendered
 export default function EmployeeSelection() {
+  // Use the styles defined above and material UI theme
   const classes = useStyles();
   const theme = useTheme();
+  // States of wheter or not the checkboxes are selected and if the side bar is opened
   const [checked, setChecked] = React.useState([1]);
   const [open, setOpen] = React.useState(false);
 
+  // To allow for teh checkboxes to be selected and unselected
   const handleToggle = value => () => {
     const currentIndex = checked.indexOf(value);
     const newChecked = [...checked];
@@ -225,15 +230,30 @@ export default function EmployeeSelection() {
     setChecked(newChecked);
   };
 
+  // Handles opening the side bar - changes state
   const handleDrawerOpen = () => {
     setOpen(true);
   };
 
+  // Handles closing the side bar - changes state
   const handleDrawerClose = () => {
     setOpen(false);
   };
 
 
+  // Actually renders the page
+  // The app bar is the blue bar at the top with the sidebar and log out button
+  // The drawer is the side bar component when the icon in the app bar is clicked it opens it
+  // The icons/links are mapped onto the drawer (sidebar) and all have a link component that the router in index.js uses
+  // to link to either internal or external webpages
+  // The employees names, pics, sample messages, etc are mapped into a list that displays as the main part of the page
+  // Currently they are hardcoded to either go into either active or not started conversations - before deployment we suggest adding
+  // a boolen for wheter or not a conversation has been started with this employee and use that to determine which category the employee
+  // should be mapped to but since we could not connect to their database we have not implemented this aspect here
+  // Each employee has a checkbox that can be selected/unselected and thats handled in the checkbox object
+  // The app bar at the bottom of the html is the aspect of the page with the fab button which links to our chat page
+  // once its clicked - before deployment it should allow for messages to be sent to multiple employees but we could not implement this since we
+  // didnt have real users/multiple users and only had one chat page to link to
   return (
     <div className = "EmployeeSelection">
     <AppBar position="static" className={clsx(classes.appBar, {[classes.appBarShift]: open,})}>

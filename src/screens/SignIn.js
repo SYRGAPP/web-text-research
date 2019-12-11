@@ -22,7 +22,7 @@ import { Link } from 'react-router-dom'
 function Copyright() {
   return (
     <Typography variant="body2" color="textSecondary" align="center">
-      {'Copyright © Syrg '}
+      {'Copyright © Syrg'}
       <Link color="inherit" href="https://material-ui.com/">
         Your Website
       </Link>{' '}
@@ -59,7 +59,16 @@ const useStyles = makeStyles(theme => ({
   },
 }));
 
-// Create a function for the SignIn page 
+// Posted the comments outside of the HTML because too hard to comment inside
+// Create a function for the SignIn page
+// Takes in the email input
+// Takes in a password input
+// The remember me and forgot password links do not currently link to anything
+// Had to hard code a link to the SelectEmployees.js
+// Were unable to figure out AWS authentication in time
+// Definitely a huge vulnerability considering do not have to be authenticated
+// to access the next page
+
 
 export default function SignIn() {
   const classes = useStyles();
@@ -74,7 +83,7 @@ export default function SignIn() {
         <Typography component="h1" variant="h5">
           Sign in
         </Typography>
-        <!-- Takes in the email input -->
+
         <form className={classes.form} noValidate>
           <TextField
             variant="outlined"
@@ -87,7 +96,7 @@ export default function SignIn() {
             autoComplete="email"
             autoFocus
           />
-          <!-- Takes in a password input-->
+
           <TextField
             variant="outlined"
             margin="normal"
@@ -99,13 +108,12 @@ export default function SignIn() {
             id="password"
             autoComplete="current-password"
           />
-          <!-- This does not currently link to anything -->
+
           <FormControlLabel
             control={<Checkbox value="remember" color="primary" />}
             label="Remember me"
           />
-          <!-- Had to hard code a link to the SelectEmployees.js were unable to figure out AWS authentication in time
-          definitely a huge vulnerability considering do not have to be authenticated to access the next page -->
+
           <Button
             component = {Link}
             to = "/users/"

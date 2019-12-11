@@ -22,7 +22,7 @@ import { Link } from 'react-router-dom'
 function Copyright() {
   return (
     <Typography variant="body2" color="textSecondary" align="center">
-      {'Copyright © Syrg'}
+      {'Copyright © Syrg '}
       <Link color="inherit" href="https://material-ui.com/">
         Your Website
       </Link>{' '}
@@ -74,7 +74,7 @@ export default function SignIn() {
         <Typography component="h1" variant="h5">
           Sign in
         </Typography>
-        // Takes in the email input 
+        <!-- Takes in the email input -->
         <form className={classes.form} noValidate>
           <TextField
             variant="outlined"
@@ -87,7 +87,7 @@ export default function SignIn() {
             autoComplete="email"
             autoFocus
           />
-          // Takes in a password input
+          <!-- Takes in a password input-->
           <TextField
             variant="outlined"
             margin="normal"
@@ -99,15 +99,13 @@ export default function SignIn() {
             id="password"
             autoComplete="current-password"
           />
-          // This does not currently link to anything
+          <!-- This does not currently link to anything -->
           <FormControlLabel
             control={<Checkbox value="remember" color="primary" />}
             label="Remember me"
           />
-          // Had to hard code a link to the SelectEmployees.js 
-          // Were unable to figure out AWS authentication in time
-          // Definitely a huge vulnerability considering do not have to be authenticated
-          // to access the next page
+          <!-- Had to hard code a link to the SelectEmployees.js were unable to figure out AWS authentication in time
+          definitely a huge vulnerability considering do not have to be authenticated to access the next page -->
           <Button
             component = {Link}
             to = "/users/"

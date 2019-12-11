@@ -97,7 +97,6 @@ class Chat extends React.Component {
     async getMessageData() {
         const response = await fetch(url, opts);
         const json = await response.json();
-        //const data = await this.getMessageData();
         this.setState({messages: json.data.managers.employees.convo})
         this.setState({state: this.state})
     }

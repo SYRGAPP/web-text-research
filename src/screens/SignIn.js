@@ -5,7 +5,6 @@ import CssBaseline from '@material-ui/core/CssBaseline';
 import TextField from '@material-ui/core/TextField';
 import FormControlLabel from '@material-ui/core/FormControlLabel';
 import Checkbox from '@material-ui/core/Checkbox';
-//import Link from '@material-ui/core/Link';
 import Grid from '@material-ui/core/Grid';
 import Box from '@material-ui/core/Box';
 import LockOutlinedIcon from '@material-ui/icons/LockOutlined';
@@ -14,12 +13,16 @@ import { makeStyles } from '@material-ui/core/styles';
 import Container from '@material-ui/core/Container';
 import SelectEmployees from './SelectEmployees';
 import { Link } from 'react-router-dom'
-//import Button from '@material-ui/core/Button';
 
+// This code is taken from the website: 
+// https://github.com/mui-org/material-ui/tree/master/docs/src/pages/getting-started/templates/sign-in
+
+
+// Includes a copyright function to display company name
 function Copyright() {
   return (
     <Typography variant="body2" color="textSecondary" align="center">
-      {'Copyright © '}
+      {'Copyright © Syrg'}
       <Link color="inherit" href="https://material-ui.com/">
         Your Website
       </Link>{' '}
@@ -29,9 +32,7 @@ function Copyright() {
   );
 }
 
-function linkToNext(){
-
-}
+// Defined our CSS use styles within this current file
 
 const useStyles = makeStyles(theme => ({
   '@global': {
@@ -58,6 +59,8 @@ const useStyles = makeStyles(theme => ({
   },
 }));
 
+// Create a function for the SignIn page 
+
 export default function SignIn() {
   const classes = useStyles();
 
@@ -71,6 +74,7 @@ export default function SignIn() {
         <Typography component="h1" variant="h5">
           Sign in
         </Typography>
+        // Takes in the email input 
         <form className={classes.form} noValidate>
           <TextField
             variant="outlined"
@@ -83,6 +87,7 @@ export default function SignIn() {
             autoComplete="email"
             autoFocus
           />
+          // Takes in a password input
           <TextField
             variant="outlined"
             margin="normal"
@@ -94,11 +99,15 @@ export default function SignIn() {
             id="password"
             autoComplete="current-password"
           />
+          // This does not currently link to anything
           <FormControlLabel
             control={<Checkbox value="remember" color="primary" />}
             label="Remember me"
           />
-          
+          // Had to hard code a link to the SelectEmployees.js 
+          // Were unable to figure out AWS authentication in time
+          // Definitely a huge vulnerability considering do not have to be authenticated
+          // to access the next page
           <Button
             component = {Link}
             to = "/users/"

@@ -33,7 +33,7 @@
     "util": "^0.12.1",
     "uws": "^10.148.1",
     "webpack-dev-server": "^3.9.0",
-    "xmldom": "^0.1.27"
+    "xmldom": "^0.6.0"
   },
   "scripts": {
     "start": "react-scripts start",

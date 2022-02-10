@@ -13,7 +13,7 @@
     "apollo-link-http": "^1.5.16",
     "apollo-server-express": "^2.9.12",
     "dotenv": "^8.2.0",
-    "engine.io": "^3.4.0",
+    "engine.io": "^4.1.2",
     "express-pino-logger": "^4.0.0",
     "fs": "0.0.1-security",
     "graphql": "^14.5.8",
@@ -61,7 +61,7 @@
   },
   "devDependencies": {
     "body-parser": "^1.19.0",
-    "engine.io": "^3.4.0",
+    "engine.io": "^4.1.2",
     "express": "^4.17.1",
     "express-pino-logger": "^4.0.0",
     "node-env-run": "^3.0.2",
